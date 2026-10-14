@@ -1599,34 +1599,26 @@ body{
 }
 #particles{width:100%!important;height:100%!important;}
 
-/* Hero móvil: el viewport pequeño es estable cuando se ocultan las barras de Chrome.
-   No se usa 100lvh: en Chrome Android es mayor que el área visible y provoca
-   que el contenido parezca desplazarse hacia arriba. */
-/* Hero móvil: adaptarse a la barra dinámica del navegador */
+/* Mobile: fixed large viewport; no resize while browser chrome hides. */
 @media (max-width: 700px) {
-  .track {
-    height: 380svh !important;
-    min-height: 0 !important;
-  }
-
+  .track { height: 380svh !important; min-height: 0 !important; }
   .scene {
     position: sticky;
     top: 0;
-    height: 100dvh !important;
-    min-height: 0 !important;
+    height: 100lvh !important;
+    min-height: 100lvh !important;
     overflow: hidden;
+    transform: none !important;
+    backface-visibility: visible !important;
   }
-
   #particles {
     display: block;
     position: absolute;
     inset: 0;
     width: 100% !important;
     height: 100% !important;
+    transform: none !important;
     pointer-events: none;
   }
-
-  .hint {
-    bottom: max(20px, env(safe-area-inset-bottom, 0px) + 12px);
-  }
+  .hint { bottom: max(20px, env(safe-area-inset-bottom, 0px) + 12px); }
 }
