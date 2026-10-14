@@ -1620,5 +1620,5 @@ body{
     transform: none !important;
     pointer-events: none;
   }
-  .hint { bottom: max(20px, env(safe-area-inset-bottom, 0px) + 12px); }
+  .hint { bottom: calc(5lvh + max(20px, env(safe-area-inset-bottom, 0px) + 12px)); }
 }
