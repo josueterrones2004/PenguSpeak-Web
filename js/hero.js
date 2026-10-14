@@ -1715,95 +1715,19 @@
   );
 
   let resizeTimer = 0;
-  let viewportResizeFrame = 0;
-  
-  function resizeCanvasHeightOnly() {
-    const nextH = Math.round(
-      scene.clientHeight
-    );
-  
-    if (
-      !nextH ||
-      !W ||
-      nextH === H
-    ) {
-      updateTarget();
-      return;
-    }
-  
-    H = nextH;
-  
-    canvas.width = Math.round(
-      W * dpr
-    );
-  
-    canvas.height = Math.round(
-      H * dpr
-    );
-  
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-  
-    if (gpu) {
-      gpu.resize(
-        canvas.width,
-        canvas.height
-      );
-    } else if (ctx) {
-      ctx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
-      );
-    }
-  
-    updateTarget();
-  
-    last = 0;
-    lastFrame = 0;
-  
-    scheduleFrame();
-  }
   
   window.addEventListener(
     'resize',
     () => {
-      const nextW = Math.round(
-        scene.clientWidth
-      );
-    
-      /*
-       * Rotación, cambio real de ancho, etc.
-       * Aquí sí reconstruimos la geometría.
-       */
-      if (nextW !== W) {
-        clearTimeout(resizeTimer);
-      
-        resizeTimer = setTimeout(
-          () => layout(true),
-          100
-        );
-      
+      const nextW = Math.round(scene.clientWidth);
+      // The mobile browser toolbar changes only visible height.
+      // Keep the existing WebGL buffer and particle positions stable.
+      if (nextW === W) {
+        updateTarget();
         return;
       }
-    
-      /*
-       * Chrome Android está mostrando/ocultando
-       * sus barras. Solo cambia la altura.
-       *
-       * Redimensionamos el framebuffer de WebGL
-       * pero NO reconstruimos miles de partículas.
-       */
-      if (!viewportResizeFrame) {
-        viewportResizeFrame =
-          requestAnimationFrame(() => {
-            viewportResizeFrame = 0;
-            resizeCanvasHeightOnly();
-          });
-      }
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => layout(true), 100);
     },
     { passive: true }
   );
