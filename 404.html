@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0b172b">
+  <meta name="description" content="La página que buscas se perdió en el hielo. Vuelve a PenguSpeak.">
+  <title>404 · Pingüino perdido | PenguSpeak</title>
+  <script>
+    // Compatible con dominio propio, localhost y GitHub Pages /PenguSpeak/.
+    const root = location.hostname.endsWith('.github.io') ? '/PenguSpeak/' : '/';
+    const base = document.createElement('base');
+    base.href = root;
+    document.head.appendChild(base);
+  </script>
+  <link rel="icon" type="image/png" href="assets/favicon-clean.png?v=2">
+  <style>
+    :root{color-scheme:dark;--bg:#0b172b;--text:#f0eeff;--muted:#aabbd2;--violet:#a78bfa;--cyan:#75e1d9}
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--bg)}
+    body{margin:0;min-height:100svh;overflow-x:hidden;display:flex;flex-direction:column;position:relative;color:var(--text);background:radial-gradient(ellipse 54% 60% at 31% 55%,rgba(23,100,120,.16),transparent 75%),radial-gradient(ellipse 46% 65% at 80% 42%,rgba(99,62,177,.16),transparent 76%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .topline{position:relative;z-index:3;width:min(1250px,calc(100% - 64px));margin:0 auto;padding:31px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:-.02em}
+    .brand img{width:35px;height:35px;object-fit:cover;border-radius:50%;border:1px solid rgba(138,156,205,.35)}
+    .topline small{color:#8fa3bf;font-size:11px;letter-spacing:.16em;font-weight:800}
+    .stage{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(26px,6vw,95px);width:min(1250px,calc(100% - 64px));margin:0 auto;padding:25px 0 70px}
+    .art{position:relative;display:grid;place-items:center;min-height:clamp(360px,40vw,510px);isolation:isolate}
+    .orbit{position:absolute;width:min(75%,385px);aspect-ratio:1;border:1px solid rgba(106,142,206,.17);border-radius:50%;animation:orbit 30s linear infinite}
+    .orbit::before,.orbit::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px rgba(117,225,217,.6)}
+    .orbit::before{top:10%;left:17%}.orbit::after{right:10%;bottom:14%;background:var(--violet);box-shadow:0 0 15px rgba(167,139,250,.55)}
+    .orbit.two{width:min(58%,298px);border-color:rgba(94,194,203,.14);animation-direction:reverse;animation-duration:23s;transform:rotate(50deg)}
+    .orbit.two::before{background:var(--violet)}
+    .orbit.two::after{background:var(--cyan)}
+    .mascot{position:relative;width:clamp(178px,22vw,240px);height:clamp(178px,22vw,240px);border-radius:50%;padding:5px;background:linear-gradient(145deg,#5edddc,#a37dff);box-shadow:0 0 0 16px rgba(106,113,202,.045),0 0 100px rgba(77,114,221,.12);animation:float 6s ease-in-out infinite}
+    .mascot img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;background:#0a1425}
+    .spark{position:absolute;font-size:22px;color:#a48cff;filter:drop-shadow(0 0 14px rgba(164,140,255,.6));animation:twinkle 4s ease-in-out infinite}
+    .spark.s1{top:15%;right:17%}.spark.s2{bottom:18%;left:14%;font-size:13px;color:#75e1d9;animation-delay:1.7s}
+    .copy{position:relative;padding:20px 0}
+    .eyebrow{font-size:11px;letter-spacing:.24em;color:#b49bff;font-weight:900;margin:0 0 20px}
+    h1{font-size:clamp(92px,12vw,184px);line-height:.82;letter-spacing:-.075em;margin:0 0 26px;font-weight:900;background:linear-gradient(125deg,#f0edff 8%,#a88aff 80%);background-clip:text;-webkit-background-clip:text;color:transparent}
+    h2{font-size:clamp(30px,3.4vw,56px);line-height:1.08;letter-spacing:-.052em;margin:0 0 20px;max-width:610px}
+    h2 em{font-style:normal;color:var(--cyan)}
+    .description{font-size:clamp(15px,1.2vw,18px);line-height:1.7;color:var(--muted);max-width:470px;margin:0 0 30px}
+    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 21px;border-radius:13px;font-weight:800;font-size:14px;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+    .button.primary{background:#8050f9;box-shadow:0 10px 28px rgba(100,61,221,.16)}
+    .button.secondary{border:1px solid #415575;background:rgba(17,32,56,.45)}
+    .button:hover{transform:translateY(-2px)}
+    .button.primary:hover{background:#9268ff;box-shadow:0 12px 35px rgba(120,73,239,.25)}
+    .button.secondary:hover{background:rgba(43,57,91,.6)}
+    a:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    .wave{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;overflow:hidden;opacity:.65}
+    .wave path{fill:none;stroke-width:1.1;stroke:rgba(46,181,194,.21)}
+    .wave path:nth-child(2n){stroke:rgba(138,99,234,.19)}
+    .wave g{animation:wave 11s ease-in-out infinite alternate;transform-origin:center}
+    .footer{position:relative;z-index:2;width:min(1250px,calc(100% - 64px));margin:0 auto;padding:21px 0 25px;border-top:1px solid rgba(123,143,186,.16);display:flex;justify-content:space-between;gap:20px;color:#8396b1;font-size:12px}
+    .footer a{text-decoration:none}.footer a:hover{color:var(--cyan)}
+    @keyframes float{50%{transform:translateY(-12px)}}
+    @keyframes twinkle{50%{opacity:.25;transform:scale(.75)}}
+    @keyframes orbit{to{rotate:360deg}}
+    @keyframes wave{to{transform:translateX(3%) translateY(-1%)}}
+    @media(max-width:780px){.topline,.stage,.footer{width:min(560px,calc(100% - 40px))}.topline{padding:18px 0}.topline small{font-size:9px}.stage{grid-template-columns:1fr;gap:0;padding:0 0 50px}.art{min-height:300px}.orbit{width:290px}.orbit.two{width:225px}.mascot{width:175px;height:175px}.copy{text-align:center;padding:0}.description{margin-inline:auto}.actions{justify-content:center}h1{font-size:clamp(88px,22vw,125px);margin-bottom:22px}h2{font-size:clamp(31px,8vw,44px)}.footer{font-size:11px}.wave{opacity:.38}}
+    @media(max-width:390px){.topline small{display:none}.art{min-height:260px}.orbit{width:245px}.orbit.two{width:190px}.mascot{width:148px;height:148px}.button{width:100%}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <svg class="wave" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true"><g>
+    <path d="M-50 540 C180 400 300 690 540 550 S850 420 1080 560 1390 680 1650 480"/>
+    <path d="M-50 553 C180 413 300 703 540 563 S850 433 1080 573 1390 693 1650 493"/>
+    <path d="M-50 566 C180 426 300 716 540 576 S850 446 1080 586 1390 706 1650 506"/>
+    <path d="M-50 579 C180 439 300 729 540 589 S850 459 1080 599 1390 719 1650 519"/>
+    <path d="M-50 592 C180 452 300 742 540 602 S850 472 1080 612 1390 732 1650 532"/>
+    <path d="M-50 605 C180 465 300 755 540 615 S850 485 1080 625 1390 745 1650 545"/>
+    <path d="M-50 618 C180 478 300 768 540 628 S850 498 1080 638 1390 758 1650 558"/>
+    <path d="M-50 631 C180 491 300 781 540 641 S850 511 1080 651 1390 771 1650 571"/>
+  </g></svg>
+  <header class="topline">
+    <a class="brand" href="./" aria-label="PenguSpeak: ir al inicio"><img src="assets/favicon.png" alt="">PenguSpeak</a>
+    <small>UN PINGÜINO FUERA DE RUTA</small>
+  </header>
+  <main class="stage">
+    <div class="art" aria-hidden="true"><div class="orbit"></div><div class="orbit two"></div><div class="mascot"><img src="assets/favicon.png" alt=""></div><span class="spark s1">✦</span><span class="spark s2">✧</span></div>
+    <div class="copy">
+      <p class="eyebrow">ERROR / 404</p>
+      <h1>404</h1>
+      <h2>Parece que este <em>pingüino se perdió.</em></h2>
+      <p class="description">La página que buscas no existe o cambió de dirección. Pero PenguSpeak sigue esperándote en casa.</p>
+      <div class="actions"><a class="button primary" href="./"><span aria-hidden="true">←</span> Volver al inicio</a><a class="button secondary" href="https://github.com/josueterrones2004/PenguSpeak" target="_blank" rel="noopener noreferrer">Ver en GitHub <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </main>
+  <footer class="footer"><span>PenguSpeak</span><a href="./">Volver a casa ↗</a></footer>
+</body>
+</html>
